@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoVida | Sustentabilidade Ambiental</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <title>EcoVida | Sustentabilidade e Campo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,8 +14,8 @@
             <nav>
                 <ul>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#pilares">Pilares</a></li>
-                    <li><a href="#dicas">Como Ajudar</a></li>
+                    <li><a href="#isaque">O Fundador</a></li>
+                    <li><a href="#galeria">Galeria do Campo</a></li>
                 </ul>
             </nav>
         </div>
@@ -23,49 +23,260 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h2>O futuro do planeta está em nossas mãos</h2>
-            <p>Pequenas atitudes diárias geram grandes impactos para o meio ambiente.</p>
-            <a href="#dicas" class="btn">Comece Agora</a>
+            <h2>Conexão com a Natureza</h2>
+            <p>Preservar o campo é proteger a nossa história e o nosso futuro.</p>
+            <a href="#galeria" class="btn">Ver Cenários</a>
         </div>
     </section>
 
     <section id="sobre" class="container">
-        <h2>Sobre a Sustentabilidade</h2>
-        <p>A sustentabilidade ambiental é a capacidade de usarmos os recursos naturais de forma inteligente, garantindo que as próximas gerações também tenham acesso a eles. Não se trata apenas de salvar árvores, mas de manter o equilíbrio da vida na Terra.</p>
+        <h2>Sustentabilidade no Campo</h2>
+        <p>A vida no campo nos ensina o verdadeiro ciclo da sustentabilidade. Cuidar do solo, proteger as fontes de água e respeitar o tempo da natureza são passos fundamentais para garantir a vida no planeta.</p>
     </section>
 
-    <section id="pilares">
-        <div class="container">
-            <h2>Os 3 Rs da Sustentabilidade</h2>
-            <div class="cards">
-                <div class="card">
-                    <h3>Reduzir</h3>
-                    <p>Consumir menos produtos, evitar desperdícios e escolher itens com menos embalagens.</p>
-                </div>
-                <div class="card">
-                    <h3>Reutilizar</h3>
-                    <p>Dar uma nova vida a objetos que iriam para o lixo, como potes de vidro e roupas velhas.</p>
-                </div>
-                <div class="card">
-                    <h3>Reciclar</h3>
-                    <p>Descartar o lixo corretamente para que a matéria-prima seja transformada em novos produtos.</p>
-                </div>
+    <section id="isaque" class="bg-light">
+        <div class="container perfil-container">
+            <div class="perfil-foto">
+                <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?q=80&w=400" alt="Isaque - Defensor da Natureza">
+            </div>
+            <div class="perfil-texto">
+                <h2>Conheça o Isaque</h2>
+                <p>Isaque é um jovem defensor do meio ambiente. Com seu olhar curioso através de seus grandes olhos azuis e seu carismático cabelo tigela, ele idealizou o projeto EcoVida para mostrar que o cuidado com a terra começa com a pureza e a dedicação das novas gerações.</p>
+                <span class="badge">Idealizador do Projeto</span>
             </div>
         </div>
     </section>
 
-    <section id="dicas" class="container">
-        <h2>Dicas Práticas para o Dia a Dia</h2>
-        <ul>
-            <li><strong>Economize água:</strong> Feche a torneira ao escovar os dentes e reduza o tempo no banho.</li>
-            <li><strong>Evite plásticos de uso único:</strong> Use sacolas ecológicas (ecobags) e garrafas reutilizáveis.</li>
-            <li><strong>Desligue os aparelhos:</strong> Não deixe luzes acesas em cômodos vazios e tire carregadores da tomada.</li>
-        </ul>
+    <section id="galeria" class="container">
+        <h2>Cenários Naturais</h2>
+        <p class="subtitulo">Imagens que nos inspiram a proteger o meio ambiente rural.</p>
+        
+        <div class="grid-galeria">
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600" alt="Estrada de terra no campo com flores">
+                <div class="legenda">Estradas Verdes</div>
+            </div>
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=600" alt="Campos verdejantes com colinas">
+                <div class="legenda">Vales Sustentáveis</div>
+            </div>
+            <div class="item-galeria">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="Fazenda antiga ao amanhecer">
+                <div class="legenda">Produção Consciente</div>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 EcoVida. Criado com foco no futuro.</p>
+        <p>&copy; 2026 EcoVida. Inspirado na preservação ambiental.</p>
     </footer>
 
 </body>
 </html>
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fafbfc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.bg-light {
+    background-color: #f0f7f4;
+}
+
+/* Menu */
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    color: #2e7d32;
+    font-size: 1.8rem;
+}
+
+header h1 span {
+    color: #66bb6a;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2e7d32;
+}
+
+/* Banner Principal (Imagem de fundo do Campo) */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200') no-repeat center center/cover;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: inline-block;
+    background: #2e7d32;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+/* Estilização da Seção do Isaque */
+.perfil-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.perfil-foto {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.perfil-foto img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.perfil-texto {
+    flex: 2;
+    min-width: 300px;
+}
+
+.perfil-texto h2 {
+    color: #1b5e20;
+    margin-bottom: 15px;
+}
+
+.perfil-texto p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.badge {
+    background-color: #81c784;
+    color: #1b5e20;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Galeria de Fotos do Campo */
+.subtitulo {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.item-galeria {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.item-galeria:hover {
+    transform: translateY(-5px);
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.legenda {
+    padding: 15px;
+    font-weight: bold;
+    color: #2e7d32;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* Rodapé */
+footer {
+    background: #222;
+    color: #bbb;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
