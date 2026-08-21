@@ -1,282 +1,498 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoVida | Sustentabilidade e Campo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <h1>Eco<span>Vida</span></h1>
-            <nav>
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#isaque">O Fundador</a></li>
-                    <li><a href="#galeria">Galeria do Campo</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="hero">
-        <div class="hero-content">
-            <h2>Conexão com a Natureza</h2>
-            <p>Preservar o campo é proteger a nossa história e o nosso futuro.</p>
-            <a href="#galeria" class="btn">Ver Cenários</a>
-        </div>
-    </section>
-
-    <section id="sobre" class="container">
-        <h2>Sustentabilidade no Campo</h2>
-        <p>A vida no campo nos ensina o verdadeiro ciclo da sustentabilidade. Cuidar do solo, proteger as fontes de água e respeitar o tempo da natureza são passos fundamentais para garantir a vida no planeta.</p>
-    </section>
-
-    <section id="isaque" class="bg-light">
-        <div class="container perfil-container">
-            <div class="perfil-foto">
-                <img src="https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?q=80&w=400" alt="Isaque - Defensor da Natureza">
-            </div>
-            <div class="perfil-texto">
-                <h2>Conheça o Isaque</h2>
-                <p>Isaque é um jovem defensor do meio ambiente. Com seu olhar curioso através de seus grandes olhos azuis e seu carismático cabelo tigela, ele idealizou o projeto EcoVida para mostrar que o cuidado com a terra começa com a pureza e a dedicação das novas gerações.</p>
-                <span class="badge">Idealizador do Projeto</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="galeria" class="container">
-        <h2>Cenários Naturais</h2>
-        <p class="subtitulo">Imagens que nos inspiram a proteger o meio ambiente rural.</p>
-        
-        <div class="grid-galeria">
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600" alt="Estrada de terra no campo com flores">
-                <div class="legenda">Estradas Verdes</div>
-            </div>
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5?q=80&w=600" alt="Campos verdejantes com colinas">
-                <div class="legenda">Vales Sustentáveis</div>
-            </div>
-            <div class="item-galeria">
-                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600" alt="Fazenda antiga ao amanhecer">
-                <div class="legenda">Produção Consciente</div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 EcoVida. Inspirado na preservação ambiental.</p>
-    </footer>
-
-</body>
-</html>
-/* Configurações Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #fafbfc;
-    color: #333;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 50px 20px;
-}
-
-.bg-light {
-    background-color: #f0f7f4;
-}
-
-/* Menu */
-header {
-    background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header .container {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETE Química Challenge</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --accent: #22d3ee;
+    --dirty: #854d0e;
+    --clean: #10b981;
+    --danger: #ef4444;
+    --text: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--accent);
+    text-align: center;
+  }
+  .subtitle { font-size: 0.95rem; color: #94a3b8; margin-bottom: 20px; text-align: center; }
+  #game {
+    width: 100%;
+    max-width: 980px;
+    display: grid;
+    gap: 16px;
+  }
+  .panel {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid #334155;
+  }
+  .panel h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* Análise da água */
+  #water-analysis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .param {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  .param .label { font-size: 0.75rem; color: #94a3b8; }
+  .param .value { font-size: 1.3rem; font-weight: 700; margin-top: 4px; }
+  .param.bad .value { color: var(--danger); }
+  .param.ok .value { color: var(--clean); }
+  /* Unidades de tratamento */
+  #units {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 70px;
+  }
+  .unit-slot {
+    flex: 1 1 140px;
+    background: #0f172a;
+    border: 2px dashed #475569;
+    border-radius: 10px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .unit-slot.filled {
+    border-style: solid;
+    border-color: var(--accent);
+    background: #164e63;
+  }
+  .unit-slot:hover { border-color: var(--accent); }
+  .unit-name { font-weight: 600; font-size: 0.9rem; }
+  .unit-chem { font-size: 0.75rem; color: #94a3b8; margin-top: 4px; }
+  /* Reagentes */
+  #chemicals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .chem-btn {
+    background: #334155;
+    border: none;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.15s;
+  }
+  .chem-btn:hover { background: #475569; transform: translateY(-2px); }
+  .chem-btn.selected { background: var(--accent); color: #0f172a; font-weight: 700; }
+  /* Controles */
+  .controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  button.action {
+    background: var(--accent);
+    color: #0f172a;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  button.action:hover { filter: brightness(1.1); transform: scale(1.03); }
+  button.action:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  button.secondary {
+    background: #475569;
+    color: white;
+  }
+  /* Resultado */
+  #result {
+    text-align: center;
+    font-size: 1.1rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .score {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--clean);
+  }
+  /* Nível e info */
+  .header-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-}
-
-header h1 {
-    color: #2e7d32;
-    font-size: 1.8rem;
-}
-
-header h1 span {
-    color: #66bb6a;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #2e7d32;
-}
-
-/* Banner Principal (Imagem de fundo do Campo) */
-#hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1200') no-repeat center center/cover;
-    height: 65vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-}
-
-.hero-content h2 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-content p {
-    font-size: 1.3rem;
-    margin-bottom: 25px;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-}
-
-.btn {
-    display: inline-block;
-    background: #2e7d32;
-    color: #fff;
-    padding: 12px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-.btn:hover {
-    background: #1b5e20;
-    transform: translateY(-2px);
-}
-
-/* Estilização da Seção do Isaque */
-.perfil-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
     flex-wrap: wrap;
-}
-
-.perfil-foto {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-}
-
-.perfil-foto img {
-    width: 260px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid #fff;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.perfil-texto {
-    flex: 2;
-    min-width: 300px;
-}
-
-.perfil-texto h2 {
-    color: #1b5e20;
-    margin-bottom: 15px;
-}
-
-.perfil-texto p {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.badge {
-    background-color: #81c784;
-    color: #1b5e20;
-    padding: 6px 15px;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .badge {
+    background: #334155;
+    padding: 6px 12px;
     border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-/* Galeria de Fotos do Campo */
-.subtitulo {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.grid-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-}
-
-.item-galeria {
-    background: #fff;
+    font-size: 0.85rem;
+  }
+  /* Tutorial */
+  #tutorial {
+    background: #1e3a5f;
+    border: 1px solid #3b82f6;
     border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.item-galeria:hover {
-    transform: translateY(-5px);
-}
-
-.item-galeria img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
-}
-
-.legenda {
-    padding: 15px;
-    font-weight: bold;
-    color: #2e7d32;
-    text-align: center;
-    border-top: 1px solid #f0f0f0;
-}
-
-/* Rodapé */
-footer {
-    background: #222;
-    color: #bbb;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
+    padding: 16px;
+    margin-bottom: 12px;
     font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  #tutorial strong { color: var(--accent); }
+  .hidden { display: none !important; }
+  /* Animação de água */
+  .water-bar {
+    height: 12px;
+    background: #334155;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .water-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #854d0e, #ca8a04, #10b981);
+    transition: width 1.2s ease;
+  }
+</style>
+</head>
+<body>
+  <h1>ETE Química Challenge</h1>
+  <p class="subtitle">Estação de Tratamento de Esgoto • Processos Químicos</p>
+
+  <div id="game">
+    <!-- Tutorial -->
+    <div id="tutorial" class="panel">
+      <strong>Como jogar:</strong><br>
+      1. Analise os parâmetros da água bruta.<br>
+      2. Clique nas unidades de tratamento na ordem correta (da esquerda para a direita).<br>
+      3. Selecione o reagente químico adequado para cada unidade.<br>
+      4. Clique em <strong>Processar Efluente</strong>.<br>
+      Objetivo: atingir o padrão de lançamento com a menor dosagem possível de químicos.
+    </div>
+
+    <!-- Status -->
+    <div class="header-bar">
+      <div class="badge">Nível <span id="level">1</span></div>
+      <div class="badge">Pontuação: <span id="score">0</span></div>
+      <div class="badge">Meta de pureza: ≥ 85%</div>
+    </div>
+
+    <!-- Análise da água -->
+    <div class="panel">
+      <h2>🔬 Análise da Água Bruta</h2>
+      <div id="water-analysis"></div>
+      <div class="water-bar"><div class="water-fill" id="purity-bar"></div></div>
+    </div>
+
+    <!-- Unidades de tratamento -->
+    <div class="panel">
+      <h2>🏭 Sequência de Tratamento (clique para adicionar)</h2>
+      <div id="units"></div>
+    </div>
+
+    <!-- Reagentes -->
+    <div class="panel">
+      <h2>🧪 Reagentes Químicos Disponíveis</h2>
+      <div id="chemicals"></div>
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+      <button class="action" id="btn-process">Processar Efluente</button>
+      <button class="action secondary" id="btn-reset">Limpar Sequência</button>
+      <button class="action secondary" id="btn-next" disabled>Próximo Nível →</button>
+    </div>
+
+    <!-- Resultado -->
+    <div class="panel" id="result">
+      Configure a sequência e processe o efluente.
+    </div>
+  </div>
+
+<script>
+// ===================== DADOS DO JOGO =====================
+const UNITS = [
+  { id: 'coag', name: 'Coagulação', desc: 'Neutraliza cargas coloidais' },
+  { id: 'floc', name: 'Floculação', desc: 'Forma flocos maiores' },
+  { id: 'sed',  name: 'Decantação', desc: 'Sedimentação dos flocos' },
+  { id: 'filt', name: 'Filtração',  desc: 'Remove sólidos finos' },
+  { id: 'desinf', name: 'Desinfecção', desc: 'Elimina patógenos' },
+  { id: 'ph',   name: 'Ajuste de pH', desc: 'Corrige acidez/alcalinidade' }
+];
+
+const CHEMICALS = [
+  { id: 'alum', name: 'Sulfato de Alumínio', formula: 'Al₂(SO₄)₃', goodFor: ['coag'], effect: { turbidez: -35, cor: -20, ph: -0.4 } },
+  { id: 'fecl3', name: 'Cloreto Férrico', formula: 'FeCl₃', goodFor: ['coag'], effect: { turbidez: -40, cor: -25, ph: -0.6 } },
+  { id: 'poli', name: 'Polímero Catiônico', formula: 'Polieletrólito', goodFor: ['floc'], effect: { turbidez: -15, dbo: -10 } },
+  { id: 'cal', name: 'Cal Hidratada', formula: 'Ca(OH)₂', goodFor: ['ph'], effect: { ph: +1.2, fosforo: -20 } },
+  { id: 'acido', name: 'Ácido Sulfúrico', formula: 'H₂SO₄', goodFor: ['ph'], effect: { ph: -1.0 } },
+  { id: 'cloro', name: 'Hipoclorito de Sódio', formula: 'NaClO', goodFor: ['desinf'], effect: { patogenos: -90, dbo: -5 } },
+  { id: 'ozonio', name: 'Ozônio', formula: 'O₃', goodFor: ['desinf'], effect: { patogenos: -95, cor: -30 } },
+  { id: 'nada', name: 'Nenhum reagente', formula: '—', goodFor: ['sed','filt'], effect: {} }
+];
+
+const LEVELS = [
+  {
+    name: "Efluente Doméstico – Turbidez Alta",
+    params: { turbidez: 180, cor: 90, dbo: 220, patogenos: 1e6, ph: 6.8, fosforo: 8 },
+    target: { turbidez: 20, cor: 15, dbo: 30, patogenos: 1000, ph: [6.5, 8.5], fosforo: 4 }
+  },
+  {
+    name: "Efluente Industrial – Cor e pH Baixo",
+    params: { turbidez: 90, cor: 220, dbo: 150, patogenos: 5e5, ph: 4.2, fosforo: 12 },
+    target: { turbidez: 15, cor: 20, dbo: 25, patogenos: 500, ph: [6.5, 8.5], fosforo: 3 }
+  },
+  {
+    name: "Efluente Hospitalar – Patógenos Críticos",
+    params: { turbidez: 60, cor: 40, dbo: 180, patogenos: 5e7, ph: 7.1, fosforo: 6 },
+    target: { turbidez: 10, cor: 10, dbo: 20, patogenos: 100, ph: [6.5, 8.5], fosforo: 2 }
+  },
+  {
+    name: "Mistura Complexa – Tudo Alto",
+    params: { turbidez: 250, cor: 180, dbo: 320, patogenos: 2e7, ph: 5.5, fosforo: 18 },
+    target: { turbidez: 15, cor: 15, dbo: 25, patogenos: 200, ph: [6.5, 8.5], fosforo: 2 }
+  },
+  {
+    name: "Desafio Final – Padrão CONAMA 430",
+    params: { turbidez: 300, cor: 250, dbo: 400, patogenos: 1e8, ph: 3.8, fosforo: 25 },
+    target: { turbidez: 10, cor: 10, dbo: 20, patogenos: 50, ph: [6.0, 9.0], fosforo: 1 }
+  }
+];
+
+// ===================== ESTADO =====================
+let currentLevel = 0;
+let score = 0;
+let sequence = [];          // array de {unitId, chemId}
+let selectedChem = null;
+let processed = false;
+
+// ===================== FUNÇÕES =====================
+function renderAnalysis() {
+  const p = LEVELS[currentLevel].params;
+  const html = `
+    <div class="param ${p.turbidez > 30 ? 'bad' : 'ok'}"><div class="label">Turbidez (NTU)</div><div class="value">${p.turbidez}</div></div>
+    <div class="param ${p.cor > 20 ? 'bad' : 'ok'}"><div class="label">Cor (uH)</div><div class="value">${p.cor}</div></div>
+    <div class="param ${p.dbo > 40 ? 'bad' : 'ok'}"><div class="label">DBO (mg/L)</div><div class="value">${p.dbo}</div></div>
+    <div class="param ${p.patogenos > 1000 ? 'bad' : 'ok'}"><div class="label">Patógenos (UFC/100mL)</div><div class="value">${p.patogenos.toExponential(1)}</div></div>
+    <div class="param ${p.ph < 6.5 || p.ph > 8.5 ? 'bad' : 'ok'}"><div class="label">pH</div><div class="value">${p.ph.toFixed(1)}</div></div>
+    <div class="param ${p.fosforo > 4 ? 'bad' : 'ok'}"><div class="label">Fósforo (mg/L)</div><div class="value">${p.fosforo}</div></div>
+  `;
+  document.getElementById('water-analysis').innerHTML = html;
+  document.getElementById('purity-bar').style.width = '0%';
 }
+
+function renderUnits() {
+  const container = document.getElementById('units');
+  container.innerHTML = '';
+  // slots vazios + os preenchidos
+  for (let i = 0; i < 6; i++) {
+    const slot = document.createElement('div');
+    slot.className = 'unit-slot' + (sequence[i] ? ' filled' : '');
+    if (sequence[i]) {
+      const u = UNITS.find(x => x.id === sequence[i].unitId);
+      const c = CHEMICALS.find(x => x.id === sequence[i].chemId);
+      slot.innerHTML = `<div class="unit-name">${u.name}</div><div class="unit-chem">${c.name}</div>`;
+    } else {
+      slot.innerHTML = `<div class="unit-name">+ Unidade ${i+1}</div>`;
+      slot.onclick = () => addUnit(i);
+    }
+    container.appendChild(slot);
+  }
+}
+
+function renderChemicals() {
+  const container = document.getElementById('chemicals');
+  container.innerHTML = '';
+  CHEMICALS.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'chem-btn' + (selectedChem === c.id ? ' selected' : '');
+    btn.innerHTML = `${c.name}<br><small>${c.formula}</small>`;
+    btn.onclick = () => {
+      selectedChem = c.id;
+      renderChemicals();
+    };
+    container.appendChild(btn);
+  });
+}
+
+function addUnit(index) {
+  if (processed) return;
+  if (!selectedChem) {
+    alert('Selecione um reagente químico primeiro!');
+    return;
+  }
+  // mostra modal simples de escolha de unidade
+  const unitList = UNITS.map(u => `<option value="${u.id}">${u.name} – ${u.desc}</option>`).join('');
+  const choice = prompt('Escolha a unidade de tratamento:\n\n' + UNITS.map((u,i)=>`${i+1}. ${u.name}`).join('\n') + '\n\nDigite o número:');
+  if (!choice) return;
+  const idx = parseInt(choice) - 1;
+  if (isNaN(idx) || idx < 0 || idx >= UNITS.length) return;
+
+  sequence[index] = { unitId: UNITS[idx].id, chemId: selectedChem };
+  selectedChem = null;
+  renderUnits();
+  renderChemicals();
+}
+
+function resetSequence() {
+  sequence = [];
+  processed = false;
+  selectedChem = null;
+  document.getElementById('btn-process').disabled = false;
+  document.getElementById('btn-next').disabled = true;
+  document.getElementById('result').innerHTML = 'Configure a sequência e processe o efluente.';
+  renderUnits();
+  renderChemicals();
+  renderAnalysis();
+}
+
+function processEffluent() {
+  if (sequence.length === 0) {
+    alert('Adicione pelo menos uma unidade de tratamento!');
+    return;
+  }
+
+  // clona os parâmetros
+  let p = { ...LEVELS[currentLevel].params };
+  let chemicalPenalty = 0;
+
+  sequence.forEach(step => {
+    const chem = CHEMICALS.find(c => c.id === step.chemId);
+    const unit = step.unitId;
+
+    // aplica efeito se o químico for adequado à unidade
+    const isGood = chem.goodFor.includes(unit) || unit === 'sed' || unit === 'filt';
+    if (isGood) {
+      for (let key in chem.effect) {
+        if (p[key] !== undefined) {
+          p[key] += chem.effect[key];
+          if (p[key] < 0) p[key] = 0;
+        }
+      }
+      // bônus se for a combinação ideal
+      if (chem.goodFor.includes(unit)) chemicalPenalty += 5;
+      else chemicalPenalty += 15;
+    } else {
+      chemicalPenalty += 25; // químico errado
+    }
+  });
+
+  // ordem ideal aproximada
+  const idealOrder = ['coag','floc','sed','filt','ph','desinf'];
+  let orderBonus = 0;
+  sequence.forEach((s, i) => {
+    if (idealOrder.indexOf(s.unitId) === i) orderBonus += 8;
+  });
+
+  // calcula pureza
+  const target = LEVELS[currentLevel].target;
+  let purity = 100;
+  if (p.turbidez > target.turbidez) purity -= Math.min(30, (p.turbidez - target.turbidez) / 5);
+  if (p.cor > target.cor) purity -= Math.min(20, (p.cor - target.cor) / 8);
+  if (p.dbo > target.dbo) purity -= Math.min(25, (p.dbo - target.dbo) / 10);
+  if (p.patogenos > target.patogenos) purity -= Math.min(30, Math.log10(p.patogenos / target.patogenos) * 8);
+  if (p.ph < target.ph[0] || p.ph > target.ph[1]) purity -= 15;
+  if (p.fosforo > target.fosforo) purity -= Math.min(15, (p.fosforo - target.fosforo) * 2);
+
+  purity = Math.max(0, Math.min(100, purity + orderBonus - chemicalPenalty * 0.3));
+  purity = Math.round(purity);
+
+  // anima barra
+  document.getElementById('purity-bar').style.width = purity + '%';
+
+  // pontuação
+  let levelScore = Math.round(purity * 10 - chemicalPenalty * 2 + orderBonus * 3);
+  if (levelScore < 0) levelScore = 0;
+  score += levelScore;
+
+  // resultado
+  const resultEl = document.getElementById('result');
+  let msg = '';
+  if (purity >= 85) {
+    msg = `<div class="score">✅ SUCESSO! Pureza ${purity}%</div>
+           <div>Pontos deste nível: +${levelScore}</div>
+           <div style="font-size:0.9rem;color:#94a3b8;margin-top:6px">Efluente dentro do padrão de lançamento.</div>`;
+    document.getElementById('btn-next').disabled = false;
+  } else {
+    msg = `<div class="score" style="color:var(--danger)">❌ Pureza ${purity}% – Abaixo do padrão</div>
+           <div>Pontos deste nível: +${levelScore}</div>
+           <div style="font-size:0.9rem;color:#94a3b8;margin-top:6px">Ajuste a sequência e os reagentes. Tente novamente!</div>`;
+  }
+  resultEl.innerHTML = msg;
+
+  document.getElementById('score').textContent = score;
+  document.getElementById('btn-process').disabled = true;
+  processed = true;
+}
+
+function nextLevel() {
+  currentLevel++;
+  if (currentLevel >= LEVELS.length) {
+    document.getElementById('result').innerHTML = `
+      <div class="score">🏆 PARABÉNS!</div>
+      <div>Você completou todos os níveis da ETE Química!</div>
+      <div style="margin-top:8px">Pontuação final: <strong>${score}</strong></div>
+      <button class="action" style="margin-top:12px" onclick="location.reload()">Jogar Novamente</button>`;
+    document.getElementById('btn-next').disabled = true;
+    document.getElementById('btn-process').disabled = true;
+    return;
+  }
+  document.getElementById('level').textContent = currentLevel + 1;
+  resetSequence();
+  document.getElementById('tutorial').classList.add('hidden');
+}
+
+// ===================== INICIALIZAÇÃO =====================
+document.getElementById('btn-process').onclick = processEffluent;
+document.getElementById('btn-reset').onclick = resetSequence;
+document.getElementById('btn-next').onclick = nextLevel;
+
+renderAnalysis();
+renderUnits();
+renderChemicals();
+</script>
+</body>
+</html>
